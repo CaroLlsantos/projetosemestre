@@ -7,36 +7,88 @@
 header, footer{
     width: 100vw;
     height: 10vh;
-    background-color: rgb(68, 118, 168);
+    background-image: url('../img/bg.png');
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    justify-content: space-between;
+
+}
+
+.esquerda{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header > .esquerda > img {
+    height: 100%;
+}
+
+.direita{
+    display: flex;
+    align-items: center;
+}
+
+header > .direita > a{
+    margin-right: 10px;
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
 }
-
-.container{
+    /* tabelas */
+.container{ 
     width: 100vw;
     min-height: 80vh;
     padding-top: 10vh;
-    background-color: rgb(104, 175, 238);
+    background-color: #bbe2fa;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5vh;
 }
 
-table{
-    width: 80%;
+.destaque{
+    display: flex;
+    width: 80vw;
+    flex-direction: column;
 }
 
-tr,li{
+.destaque_direita{
+    display: flex;
+    justify-content: start;
+    width: 20%;
+    gap: 10px;
+    
+}
+
+.destaque_esquerda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+table{
+    width: 80%;
+    border-collapse: collapse;
+    background-color: rgb(245, 245, 245, 100); /* Fundo branco suave para a tabela */
+    color: #0d1b2a; /* Texto azul escuro */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra para a tabela */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+tr{
     width: 100%;
     min-height: 6vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid rgb(74, 74, 74);
+    border-bottom: 2px solid #4a4a4a;
 }
 
 th,td{
@@ -44,47 +96,9 @@ th,td{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: 10px;
 }
 
-.btn{
-    text-decoration: none;
-    background-color: rgb(68, 118, 168, 0.4);
-    color: whitesmoke;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 8px;
-    border: 1px solid rgb(68, 118, 168, 0.9);
-}
-
-.btn:hover{
-    text-decoration: none;
-    background-color: rgb(68, 118, 168, 0.9);
-    color: whitesmoke;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 10px;
-    border: 1px solid rgb(68, 118, 168, 1.3);
-}
-
-.btnv{
-    text-decoration: none;
-    background-color: rgb(0, 0, 168, 0.4);
-    color: whitesmoke;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 8px;
-    border: 1px solid rgb(0, 0, 168,  0.9);
-}
-
-.btnv:hover{
-    text-decoration: none;
-    background-color: rgb(0, 0, 168, 0.8);
-    color: whitesmoke;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 10px;
-    border: 1px solid rgb(0, 0, 168,  1.3);
-}
 
 ul{
     list-style: none;
@@ -102,8 +116,79 @@ form>p{
     flex-direction: column;
 }
 
-.btnacesso{
-    height: 100%;
-    display: flex;
-    align-items: center;
+/*configuracao de botao*/
+
+.btn{ /*nova categoria e novo produto*/
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    background-color: #2d2f8cc5;
+    padding: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: small;
+    padding: 6px;
+    font-weight: 500;
 }
+
+.btns{/* categoria produto movimentacao e home, botoes de cima */
+    color: white;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-size: large;
+}
+
+.btns:hover{/* categoria produto movimentacao e home, botoes de cima */
+    color: white;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-size: large;
+    text-shadow: 5px 5px 10px #000000;
+}
+
+.editar{
+    color: #898989;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.editar:hover{
+    color: #898989;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.apagar{
+    color: #bf2f2f;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.apagar:hover{
+    color: #bf2f2f;
+    padding: 7px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.voltar{
+    color: #2d2f8cc5;
+    text-decoration: none;
+}
+
+.voltar:hover{
+    color: #2d2f8cc5;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* formulário */
+

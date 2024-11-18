@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
 {% block title %}Lista de Categorias{% endblock %}
 {% block content %}
-<h2>Lista de Categorias</h2>
-<ul>
-    {% for categoria in object_list %}
-    <li>{{ categoria.nome }} - <a class="btn" href="{% url 'categoria_update' categoria.pk %}">Editar</a> - <a class="btnv" href="{% url 'categoria_delete' categoria.pk %}">Excluir</a></li>
-    {% endfor %}
-</ul>
-<a class="btn" href="{% url 'categoria_create' %}">Nova Categoria</a>
+
+<div class="destaque">
+
+    <div class="destaque_esquerda">
+        <h2>Lista de Categorias</h2>
+    </div>
+
+    <div class="destaque_direita">
+        <a class="btn" href="{% url 'categoria_create' %}">Nova Categoria</a>
+    </div>
+    
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categoria in object_list %}
+        <tr>
+            <td>{{ categoria.nome}}</td>
+            <td>
+                <a class="editar" href="{% url 'categoria_update' categoria.pk %}">Editar</a>
+                <a class="apagar" href="{% url 'categoria_delete' categoria.pk %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
 

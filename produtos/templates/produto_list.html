@@ -3,7 +3,18 @@
 {% block title %}Lista de Produtos{% endblock %}
 
 {% block content %}
-    <h2>Lista de Produtos</h2>
+
+<div class="destaque">
+
+    <div class="destaque_esquerda">
+        <h2>Lista de Produtos</h2>
+    </div>
+    <div class="destaque_direita">
+        <a class="btn" href="{% url 'produto_create' %}">Novo Produto</a>
+        <a class="btn" href="{% url 'categoria_create' %}">Nova Categoria</a>
+    </div>
+    
+</div>
 
     <table>
         <thead>
@@ -18,11 +29,12 @@
             {% for produto in object_list %}
             <tr>
                 <td>{{ produto.nome }}</td>
-                <td>R$ {{ produto.preco }}</td>
+                <td>R$ {{ produto.valor }}</td>
                 <td>{{ produto.categoria.nome }}</td>
                 <td>
-                    <a href="{% url 'produto_update' produto.pk %}" class="btn">Editar</a>
-                    <a href="{% url 'produto_delete' produto.pk %}" class="btnv">Excluir</a>
+                    <a href="{% url 'produto_update' produto.pk %}" class="editar">Editar</a>
+                     | 
+                    <a href="{% url 'produto_delete' produto.pk %}" class="apagar">Excluir</a>
                 </td>
             </tr>
             {% empty %}
@@ -33,6 +45,5 @@
         </tbody>
     </table>
 
-    <a class="btn" href="{% url 'produto_create' %}">Novo Produto</a>
-    <a class="btn" href="{% url 'categoria_create' %}">Cadastrar Categoria</a>
+   
 {% endblock %}

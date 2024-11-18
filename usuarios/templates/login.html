@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login do Sistema</title>
+    {%load static%} 
+    <link rel="stylesheet" href="{%static 'css/login.css'%}">
+</head>
+<body>
+    <header>
+
+        <img src="{%static 'img/TSS.png'%}" alt="TechStock">
+
+    </header>
+    <div class= "page">
+         <form method="post" action="{% url 'login' %}" class='formLogin'>
+            {% csrf_token %}
+      
+             <h1>Login</h1>
+            {{ form.as_p }}
+            <button type="submit" class="btn">Entrar</button>
+         </form>
+    </div>
+    {% if forms.erros %}
+        <p>Usúario e senha inválidos!</p>
+    {% endif %}
+    <footer>
+
+    </footer>
+</body>
+</html>

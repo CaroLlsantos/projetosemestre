@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8n3@l=%_9__zwwt+wp%=pht^2*hfb!6#y8e*t&p)#w3aij-1n6'
+SECRET_KEY = 'django-insecure-xqi=oesw)^r9ldq9(*qjga^fd1=1vnpecp7w43880i1ah_)#tz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'produtos',
     'movimentacao',
+    'usuarios',
+    'homepage',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'homepage'

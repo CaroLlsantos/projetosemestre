@@ -2,18 +2,46 @@
 {% block title %}Listar Movimentação{% endblock %}
 
 {% block content %}
-<h2>Movimentações</h2>
-<a href="{% url 'movimentacao_create' %}">Nova Movimentação</a>
-<ul>
-    {% for movimentacao in object_list %}
-        <li>
-            {{ movimentacao.produto.nome }} - {{ movimentacao.quantidade }} unidades em {{ movimentacao.data }} -
-            Total: R$ {{ movimentacao.valor_total }}
-            <a href="{% url 'movimentacao_update' movimentacao.pk %}">Editar</a>
-            <a href="{% url 'movimentacao_delete' movimentacao.pk %}">Excluir</a>
-        </li>
-    {% empty %}
-        <li>Sem movimentações cadastradas.</li>
+
+<div class="destaque">
+
+    <div class="destaque_esquerda">
+        <h2>Movimentações</h2>
+    </div>
+
+    <div class="destaque_direita">
+        <a class="btn" href="{% url 'movimentacao_create'%}">Novo Movimentação</a>
+    </div>
+    
+</div>
+
+    <table>
+        <thead>
+            <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movimentacao in object_list %}
+            <tr>
+                <td>{{ movimentacao.produto.nome }}</td>
+                <td>{{ movimentacao.quantidade }}</td>
+                <td>R$ {{movimentacao.valor_total}}</td>
+                <td>{{ movimentacao.data }}</td>
+                <td>
+                    <a href="{% url 'movimentacao_update' movimentacao.pk %}" class= "editar">Editar</a>
+                    <a href="{% url 'movimentacao_delete' movimentacao.pk %}" class= "apagar">Excluir</a>
+                </td>
+            </tr>
+             {% empty %}
+        <tr> <td>Sem movimentações cadastradas. </td></tr>
     {% endfor %}
-</ul>
+        </tbody>
+    </table>
+
+   
+
 {% endblock %}
