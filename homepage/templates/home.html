@@ -1,11 +1,43 @@
-{% extends 'base.html' %}
-{% block title %}Perfil{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%} 
+    <link rel="stylesheet" href="{%static 'css/home.css'%}">
+</head>
+<body>
 
+    <header>
+        <div class= "esquerda">
+            <a href="{% url 'homepage' %}"><img src="{% static 'img/TSS.png' %}"  width="110px"></a>
+            
+            
+            <label for="menu-toggle" class="menu-toggle">☰</label>
+            
+            <nav class="menu">
+                <a class="btns" href="{% url 'homepage' %}">Home</a>
+                <a class="btns" href="{% url 'produto_list' %}">Produtos</a>
+                <a class="btns" href="{% url 'categoria_list' %}">Categoria</a>
+                <a class="btns" href="{% url 'movimentacao_list' %}">Movimentacao</a>
+            </nav>
 
-<div class="table-container">
-    <h1>Bem-vindo, {{ user.first_name }} {{ user.last_name }}!</h1>
-    <h2>Últimos 10 Produtos e Saldo de Estoque</h2>
+        </div>
+
+        <div class= "direita">
+            <a class="btns" href="{% url 'profile' %}">Perfil</a>
+        </div>
+
+    </header>
+    <div class="lateral">
+
+    </div>
+    <div class="container">
+        <div class="texto">
+        <h1>Bem-vindo, {{ user.first_name }} {{ user.last_name }}!</h1>
+        <h3>Últimos 10 Produtos e Saldo de Estoque</h2>
+        </div>    
 <table>
     <tr>
         <th>Produto</th>
@@ -20,5 +52,12 @@
     </tr>
     {% endfor %}
 </table>
-</div>
-{% endblock %}
+    
+    </div>
+    <footer>
+        
+    </footer>
+    
+</body>
+</html>
+

@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{%block title%}TechStock Solutions{%endblock%}</title>
-    {%load static%} 
+    {%load static%}     
     <link rel="stylesheet" href="{%static 'css/estilo.css'%}">
 </head>
 <body>
     <header>
         <div class= "esquerda">
-            <img src="{% static 'img/TSS.png' %}" >
-            <a class="btns" href="{% url 'categoria_list' %}">Categoria</a>
-            <a class="btns" href="{% url 'produto_list' %}">Produto</a>
-            <a class="btns" href="{% url 'movimentacao_list'%}">Movimentação</a>
+            <a href="{% url 'homepage' %}"><img src="{% static 'img/TSS.png' %}"  width="110px"></a>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle">☰</label>
+            
+            <nav class="menu">
+                <a class="btns" href="{% url 'homepage' %}">Home</a>
+                <a class="btns" href="{% url 'produto_list' %}">Produtos</a>
+                <a class="btns" href="{% url 'categoria_list' %}">Categoria</a>
+                <a class="btns" href="{% url 'movimentacao_list' %}">Movimentacao</a>
+            </nav>
+
         </div>
 
         <div class= "direita">

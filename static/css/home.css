@@ -4,17 +4,23 @@
     box-sizing: border-box;
 }
 
-header, footer{
-    width: 100vw;
-    height: 10vh;
+body{
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:     "h h"
+                             "l c"
+                             "f f";
+}
+header{
+    grid-area: h;
     background-image: url('../img/bg.png');
     display: flex;
     align-items: center;
     gap: 3vw;
     justify-content: space-between;
-
+    background-color: blue;
 }
-
 .esquerda{
     display: flex;
     align-items: center;
@@ -34,20 +40,34 @@ header > .direita > a{
     margin-right: 10px;
 }
 
-body{
-    background-color: rgb(0, 0, 0);
-    font-family: 'Times New Roman', Times, serif;
+
+footer{
+       grid-area: f;
+        background-image: url('../img/bg.png');
+        display: flex;
+        align-items: center;
+        background-color: blue;
+    
 }
-    /* tabelas */
+header > img{
+    height: 100%;
+}
+
+.lateral{
+    grid-area: l;
+    background-image: url('/static/img/img_lateral.png');
+    background-size: 215%;
+    
+}
+
 .container{ 
-    width: 100vw;
-    min-height: 80vh;
-    padding-top: 10vh;
-    background-color: #bbe2fa;
+    grid-area: c;
+    background-color: #bbe2fa ;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5vh;
+    justify-content: center;
 }
 
 .destaque{
@@ -80,6 +100,7 @@ table{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra para a tabela */
     border-radius: 8px;
     overflow: hidden;
+    
 }
 
 tr{
@@ -132,9 +153,6 @@ form>h2{
     gap: 1px;
     margin-bottom: 10px;
 }
-
-
-/*configuracao de botao*/
 
 .btn{ /*nova categoria e novo produto*/
     border: 1px solid #d3d3d3;
@@ -266,41 +284,9 @@ form>h2{
     color: white;
 }
 
-
-#menu-toggle {
-    display: none;
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
 }
-
-
-@media (max-width: 768px) {
-    .menu {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 10vh; 
-        left: 0;
-        background-color: rgb(220, 20, 93);
-        width: 100%;
-        padding: 1rem 0;
-    }
-
-    .menu a {
-        padding: 1rem;
-        text-align: center;
-        width: 100%;
-        border-top: 1px solid white;
-    }
-
-    .menu a:last-child {
-        border-bottom: 1px solid white;
-    }
-
-    .menu-toggle {
-        display: block; 
-    }
-
-    #menu-toggle:checked ~ .menu {
-        display: flex;
-    }
-}
-

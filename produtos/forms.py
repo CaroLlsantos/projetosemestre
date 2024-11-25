@@ -13,11 +13,11 @@ class CategoriaForm(forms.ModelForm):
 class ProdutoForms(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['nome', 'valor', 'categoria', 'descricao', 'quantidade']
+        fields = ['nome', 'valor', 'descricao', 'quantidade', 'categoria']
         labels = {
             'nome': 'Nome do Produto',
             'valor': 'Valor unitário (R$)',
-            'categoria': 'Categoria',
             'descricao': 'Descrição do Produto',
             'quantidade': 'Quantidade do Produto',
+            'categoria': 'Categoria',
         }

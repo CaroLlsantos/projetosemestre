@@ -8,7 +8,7 @@
 
     <form method="post">
         {% csrf_token %}
-        <button class="excluir" type="submit">Confirmar Exclusão</button>
-        <a class="voltar" href="{% url 'categoria_list' %}">Cancelar</a>
+        <button class="apagar" type="submit">Confirmar Exclusão</button>
+        <a class="editar" href="{% url 'categoria_list' %}">Cancelar</a>
     </form>
 {% endblock %}

@@ -25,7 +25,7 @@
         <tr>
             <td>{{ categoria.nome}}</td>
             <td>
-                <a class="editar" href="{% url 'categoria_update' categoria.pk %}">Editar</a>
+                <a class="editar" href="{% url 'categoria_update' categoria.pk %}">Editar</a> | 
                 <a class="apagar" href="{% url 'categoria_delete' categoria.pk %}">Excluir</a>
             </td>
         </tr>

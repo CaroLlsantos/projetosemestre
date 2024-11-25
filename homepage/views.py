@@ -12,11 +12,14 @@ class ProdutoSaldoView(LoginRequiredMixin, TemplateView):
         produtos = Produto.objects.annotate(
             saldo=Sum(
                 Case(
-                    When(movimentacao_tipo='E', then=F('movimentacao_quantidade')),
-                    When(mpvimentacao_tipo='S', then=-F('movimentacao_quantidade')), default=0,
+                    When(movimentacao__tipo='E', then=F('movimentacao__quantidade')),
+                    When(movimentacao__tipo='S', then=-F('movimentacao__quantidade')),
+                    default=0,
                 )
             )
-        ).order_by('-id')[:10]
+        ).order_by('-id')[:10]  
 
         context['produtos'] = produtos
         return context
+    
+    
