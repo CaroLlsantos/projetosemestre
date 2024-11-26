@@ -3,71 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{%block title%}TechStock Solutions{%endblock%}</title>
-    {%load static%}    
+    <title>Menu</title>
+    {%load static%} 
     <link rel="stylesheet" href="{%static 'css/menu.css'%}">
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <div class="header-content">
+        <div class="primeira-pagina">
+       <img src="{% static "img/logonegativo.png" %}" alt="" srcset="">
             <h2>Inovação e Especialização em Soluções Tecnológicas!</h2>
-            <p>Soluções tecnológicas para transformar o futuro do seu negócio.</p>
+            <p>O Futuro do seu negócio.</p>
+            <a class="btn" href="{% url 'login' %}">Acessar sistema</a>
         </div>
     </header>
 
-    <!-- Seção de Introdução -->
     <section id="intro">
-        <div class="container">
-            <h2>Quem Somos</h2>
-            <p>Somos uma empresa em destaque no mercado de fornecimento tecnológico, oferecendo um trabalho .</p>
-            <a href="#services" class="btn">Saiba Mais</a>
+        <div class="pagina_do_meio">
+            <h1>Bem-vindos!</h1>
+            <h3>Bora fazer mais um trabalho?</h3>
+            <p class="texto1">No nosso time, cada dia é uma nova oportunidade de crescer,</p>
+            <p class="texto1">inovar e superar desafios. Estamos juntos nessa jornada para fazer a diferença, impulsionados</p>
+            <p class="texto1"> pelo compromisso de entregar o melhor em tudo o que fazemos.</p>
+            <br>
+            <p class="texto1"> Lembre-se: o sucesso é a soma de pequenos esforços repetidos diariamente. Vamos continuar avançando,</p>
+            <p class="texto1"> um passo de cada vez, com dedicação e entusiasmo.</p>
+            <br>
+            <p class="texto2">"O segredo do sucesso é a constância no propósito." - Benjamin Disraeli</p>
         </div>
     </section>
 
-    <!-- Seção de Produtos/Serviços -->
     <section id="services">
         <div class="container">
-            <h2>Nossos Serviços</h2>
+            <p class= "ns">Nossos Serviços</p>
+            <br>
             <div class="service-grid">
                 <div class="service-card">
-                    <img src="produto1.jpg" alt="Produto 1">
-                    <h3>Soluções Inteligentes</h3>
-                    <p>Transforme seu negócio com inteligência artificial e automação.</p>
+                    <img src="{% static 'img/bg.png' %}" alt="Produto 1">
+                    <p class="titulo">Cadastro de Produto</p>
+                    <p class="subtitulo">Cadastre um produto presente no estoque.</p>
+                    <br>
+                    <a class="btn" href="{% url 'login' %}">Acessar</a>
                 </div>
                 <div class="service-card">
-                    <img src="produto2.jpg" alt="Produto 2">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Criamos websites inovadores e responsivos para sua empresa.</p>
+                    <img src="{% static 'img/bg.png' %}" alt="Produto 2">
+                    <p class="titulo">Cadastro de Categoria</p>
+                    <p class="subtitulo">Cadastre uma categoria de produtos pesente no estoque.</p>
+                    <br>
+                    <a class="btn" href="{% url 'login' %}">Acessar</a>
                 </div>
                 <div class="service-card">
-                    <img src="produto3.jpg" alt="Produto 3">
-                    <h3>Consultoria e Suporte</h3>
-                    <p>Apoio especializado para otimizar a sua infraestrutura de TI.</p>
+                    <img src="{% static 'img/bg.png' %}" alt="Produto 3">
+                    <p class="titulo">Cadastro de Movimentações</p>
+                    <p class="subtitulo">Cadastre as movimentações feitas, entrada e saída de produtos.</p>
+                    <br>
+                    <a class="btn" href="{% url 'login' %}">Acessar</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Estoques -->
-    <section id="stocks">
-        <div class="container">
-            <h2>Galeria de Estoques</h2>
-            <div class="image-gallery">
-                <img src="estoque1.jpg" alt="Estoque 1">
-                <img src="estoque2.jpg" alt="Estoque 2">
-                <img src="estoque3.jpg" alt="Estoque 3">
-                <img src="estoque4.jpg" alt="Estoque 4">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 TechStock Solutions. Todos os direitos reservados.</p>
-            <p>Criado por Ana Carolina e Julia Peres</p>
+            <p>Criado por Julia Peres e Ana Carolina</p>
         </div>
     </footer>
 

@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-
-        <img src="{%static 'img/TSS.png'%}" alt="TechStock">
+        
+        <img src="{%static 'img/logonegativo.png'%}" alt="TechStock">
 
     </header>
     <div class= "page">
-         <form method="post" action="{% url 'login' %}" class='formLogin'>
+        <form method="post" action="{% url 'login' %}" class='formLogin'>
             {% csrf_token %}
       
-             <h1>Login</h1>
+            <h1>Login</h1>
             {{ form.as_p }}
             <button type="submit" class="btn">Entrar</button>
-         </form>
+        </form>
     </div>
     {% if forms.erros %}
         <p>Usúario e senha inválidos!</p>

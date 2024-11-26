@@ -5,96 +5,143 @@
     box-sizing: border-box;
 }
 
-/* Corpo da página */
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #bbe2fa;
     color: #333;
 }
 
-/* Header */
 header {
-    background: url('linha-azul.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* Efeito de paralaxe */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #2d2f8cc5;
+    color: #ffffff;
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o conteúdo do header no eixo Y */
+    align-items: center;
+/* Ajusta a altura do header para preencher a tela inteira */
+}
+
+.primeira-pagina {
+    position: relative;
+    z-index: 1; 
+    text-align: center; 
+    color: white;
+    background-color: black;
+    margin: auto; 
+    border-radius: 10px; 
+    height: 500px;
+    width: 100%;
+    display: flex; /* Usando flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Alinha os filhos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.primeira-pagina::before {
+    content: "";
+    background: url('/static/img/background.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+header .primeira-pagina h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .primeira-pagina p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.primeira-pagina > img {
+    width: 120px;
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo da imagem */
+}
+
+.btn {
+    background-color: orangered;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+#intro {
+    background-color: #d4dbec;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
 }
 
-header .header-content h1 {
-    font-size: 4rem;
-    font-weight: bold;
+.pagina_do_meio > h1 {
+    font-size: 2.2rem;
+    color: #2D2E8C;
     margin-bottom: 10px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-header .header-content p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-header .header-content a {
-    padding: 15px 30px;
-    background-color: #005f87;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-header .header-content a:hover {
-    background-color: #00446e;
-}
-
-/* Seção de Introdução */
-#intro {
-    background-color: #e0f7fa;
-    padding: 60px 0;
-    text-align: center;
-}
-
-#intro .container h2 {
-    font-size: 2.5rem;
-    color: #bbe2fa;
-    margin-bottom: 20px;
-}
-
-#intro .container p {
+.pagina_do_meio > h3 {
     font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
+    color: rgb(216, 82, 34);
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
-#intro .container .btn {
-    padding: 12px 30px;
-    background-color: #005f87;
-    color: white;
-    text-decoration: none;
+.texto1 {
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    color: #2D2E8C;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#intro .container .btn:hover {
-    background-color: #00446e;
+.texto2 {
+    font-size: 1rem;
+    color: rgb(216, 82, 34);
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Seção de Produtos/Serviços */
 #services {
     padding: 60px 0;
     background-color: #fff;
     text-align: center;
 }
 
-#services h2 {
-    font-size: 2.5rem;
-    color: #005f87;
-    margin-bottom: 40px;
+.ns {
+    font-size: 2.2rem;
+    color: #2D2E8C;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 550;
+}
+
+.titulo {
+    font-size: 1.4rem;
+    margin-top: 15px;
+    color: rgb(216, 82, 34);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subtitulo{
+    font-family: 'Times New Roman', Times, serif;
+    color: #747881;
+    padding: 5px;
 }
 
 .service-grid {
@@ -118,54 +165,14 @@ header .header-content a:hover {
     border-radius: 8px;
 }
 
-.service-card h3 {
-    margin-top: 15px;
-    color: #333;
-}
-
-.service-card p {
-    color: #666;
-    margin-top: 10px;
-}
 
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Seção de Estoques */
-#stocks {
-    background-color: #e8e8e8;
-    padding: 60px 0;
-}
-
-#stocks h2 {
-    font-size: 2.5rem;
-    color: #005f87;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.image-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.image-gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
 footer {
-    background-color: #333;
+    background-color: #2D2E8C;
     color: #fff;
     padding: 30px 0;
     text-align: center;
@@ -188,6 +195,3 @@ footer .social-icon {
     transition: color 0.3s;
 }
 
-footer .social-icon:hover {
-    color: #005f87;
-}

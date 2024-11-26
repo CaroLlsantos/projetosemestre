@@ -11,9 +11,9 @@
 
     <header>
         <div class= "esquerda">
-            <a href="{% url 'homepage' %}"><img src="{% static 'img/TSS.png' %}"  width="110px"></a>
+            <a href="{% url 'menu' %}"><img src="{% static 'img/logonegativo.png' %}"  width="110px" class="meulogo"></a>
             
-            
+            <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-toggle">☰</label>
             
             <nav class="menu">
@@ -30,6 +30,7 @@
         </div>
 
     </header>
+    
     <div class="lateral">
 
     </div>
@@ -47,7 +48,7 @@
     {% for produto in produtos %}
     <tr>
         <td>{{ produto.nome }}</td>
-        <td>R$ {{ produto.preco }}</td>
+        <td>R$ {{ produto.valor}}</td>
         <td>{{ produto.saldo|default:"0" }} unidades</td>
     </tr>
     {% endfor %}
@@ -60,4 +61,3 @@
     
 </body>
 </html>
-

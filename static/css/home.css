@@ -29,6 +29,7 @@ header{
 
 .meulogo {
     height: 100%;
+    margin-top: 10px;
 }
 
 .direita{
@@ -62,12 +63,13 @@ header > img{
 
 .container{ 
     grid-area: c;
-    background-color: #bbe2fa ;
+    background-color:#d4dbec ;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5vh;
     justify-content: center;
+    
 }
 
 .destaque{
@@ -289,4 +291,61 @@ form>h2{
     flex-direction: column;
     align-items: center;
     gap: 2vw;
+}
+
+
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 10vh; 
+        left: 0;
+        background-color:#2D2E8C;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .menu a {
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid white;
+    }
+
+    .menu a:last-child {
+        border-bottom: 1px solid white;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+
+    body{
+        grid-template-areas:     "h h"
+                                 "c c"
+                                 "f f";
+    }
 }
